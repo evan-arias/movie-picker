@@ -1,0 +1,184 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body Styling */
+body {
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8; /* Neutral light background */
+    color: #333; /* Default neutral text */
+}
+
+/* Main Heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+/* Subheadings */
+h2, h3 {
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+form {
+    margin: 20px 0;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 300px;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px #555;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #777; /* Default neutral color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Movie Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #333;
+    max-width: 300px;
+    border: 1px solid #ccc;
+}
+
+/* Seasonal Themes */
+
+/* Valentine's Day */
+body.valentine {
+    background-color: #ffe6ea; /* Soft pink */
+    color: #a83256; /* Deep red text */
+}
+
+body.valentine h1, body.valentine h2 {
+    color: #a83256; /* Valentine red headings */
+}
+
+body.valentine button {
+    background-color: #ff7b9c;
+}
+
+body.valentine button:hover {
+    background-color: #e65b7b;
+}
+
+/* Halloween */
+body.halloween {
+    background-color: #1b1b1b; /* Dark spooky background */
+    color: orange;
+}
+
+body.halloween h1, body.halloween h2 {
+    color: orange;
+}
+
+body.halloween button {
+    background-color: #ff8800;
+}
+
+body.halloween button:hover {
+    background-color: #cc6600;
+}
+
+/* Christmas */
+body.christmas {
+    background-color: #f9f9f9; /* Light festive white */
+    color: #1c5d3e; /* Evergreen text */
+}
+
+body.christmas h1, body.christmas h2 {
+    color: #c8094c; /* Christmas red */
+}
+
+body.christmas button {
+    background-color: #1c5d3e; /* Evergreen green */
+    color: #fff;
+}
+
+body.christmas button:hover {
+    background-color: #144029; /* Darker green on hover */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}

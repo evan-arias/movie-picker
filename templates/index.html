@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yas & Evan's Movie Picker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{{ theme }}">
+    <!-- Main Container -->
+    <div class="container">
+        <h1>🎬 Welcome to Yas & Evan's Movie Picker! 🎬</h1>
+
+        <!-- Seasonal Message -->
+        {% if theme == "valentine" %}
+        <p style="color: #a83256;">💖 Happy Valentine's Day! 💖</p>
+        {% elif theme == "halloween" %}
+        <p style="color: orange;">🎃 Spooky Halloween Vibes! 👻</p>
+        {% elif theme == "christmas" %}
+        <p style="color: #1c5d3e;">🎄 Merry Christmas! 🎅</p>
+        {% endif %}
+
+        <!-- Display success or informational message -->
+        {% if message %}
+        <h3 style="color: green; text-align: center;">{{ message }}</h3>
+        {% endif %}
+
+        <!-- Add a Movie Form -->
+        <h3>Add a Movie:</h3>
+        <form action="/" method="POST">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Yas or Evan" value="{{ name }}" required>
+                <input type="text" name="movie" placeholder="Movie Name" required>
+                <input type="password" name="keyword" placeholder="Optional Keyword">
+            </div>
+            <button type="submit">Add Movie</button>
+        </form>
+
+        <!-- Pick a Random Movie -->
+        <h3>Pick a Random Movie:</h3>
+        <form action="/random" method="GET">
+            <button type="submit">Pick Movie</button>
+        </form>
+
+        <!-- Show All Movies -->
+        <h3>Show All Movies:</h3>
+        <form action="/show" method="GET">
+            <button type="submit">Show List</button>
+        </form>
+
+        <!-- Conditionally Display the Movie Lists -->
+        {% if yas_movies or evan_movies %}
+        <h2>🍿 Yas's Movies:</h2>
+        <ul>
+            {% for movie in yas_movies %}
+            <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>🍿 Evan's Movies:</h2>
+        <ul>
+            {% for movie in evan_movies %}
+            <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

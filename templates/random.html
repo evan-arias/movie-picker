@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Movie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Include Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Trigger confetti effect when the page loads
+        window.onload = () => {
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+        };
+    </script>
+</head>
+<body class="{{ theme }}">
+    <div class="container">
+        <h1>🍿 Random Movie Picker 🍿</h1>
+        <h3>{{ chosen_movie }}</h3>
+        <a href="/" style="text-decoration: none;">
+            <button>Back to Home</button>
+        </a>
+    </div>
+</body>
+</html>
